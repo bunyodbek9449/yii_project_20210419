@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 19 2021 г., 14:59
+-- Время создания: Апр 19 2021 г., 15:46
 -- Версия сервера: 10.3.13-MariaDB-log
 -- Версия PHP: 7.1.32
 
@@ -53,15 +53,27 @@ CREATE TABLE `person` (
   `first_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `last_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gender` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL
+  `gender` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
+  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Дамп данных таблицы `person`
 --
 
-INSERT INTO `person` (`id`, `first_name`, `last_name`, `email`, `gender`) VALUES
-(1, 'bunyod', 'Iskandarov', 'bunyod@bunyod.uz', 'erkak');
+INSERT INTO `person` (`id`, `first_name`, `last_name`, `email`, `gender`, `created_at`, `updated_at`) VALUES
+(1, 'bunyod', 'Iskandarov', 'bunyod@bunyod.uz', 'ayol', '2021-04-19 17:41:52', '2021-04-19 17:42:46'),
+(2, 'Xolmurod', 'Isroilov', 'x.isroilov@piima.uz', 'erkak', '2021-04-19 17:41:52', '2021-04-19 17:42:30'),
+(3, 'sdada', 'dsadsadsa', 'dsadas@sda.sd', 'erkak', '2021-04-19 17:41:52', '2021-04-19 17:42:30'),
+(4, 'Xolmurod', 'Isroilov', 'x.isroilov@piima.uz', 'erkak', '2021-04-19 17:41:52', '2021-04-19 17:42:30'),
+(5, 'Xolmurod', 'Isroilov', 'x.isroilov@piima.uz', 'erkak', '2021-04-19 17:41:52', '2021-04-19 17:42:30'),
+(6, 'saf', 'asfasfa', 'sfasf@asf.afsafas', 'erkak', '2021-04-19 17:41:52', '2021-04-19 17:42:30'),
+(7, 'asgsag', 'asgsag', 'dsadas@sda.sd', 'erkak', '2021-04-19 17:41:52', '2021-04-19 17:42:30'),
+(8, 'asfsafsaf', 'afasfa', 'sfasf@asf.afsafas', 'ayol', '2021-04-19 17:41:52', '2021-04-19 17:42:30'),
+(9, 'safsaf', 'afasf', 'sfasf@asf.afsafas', 'ayol', '2021-04-19 17:41:52', '2021-04-19 17:42:30'),
+(10, 'asfdas', 'fsafsaf', 'sfasf@asf.afsafas', 'ayol', '2021-04-19 17:41:52', '2021-04-19 00:00:00'),
+(11, 'TEST', 'TEST', 'TEST@TEST.TEST', 'erkak', '2021-04-19 17:45:55', '2021-04-19 17:45:55');
 
 -- --------------------------------------------------------
 
@@ -122,7 +134,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT для таблицы `person`
 --
 ALTER TABLE `person`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT для таблицы `user`

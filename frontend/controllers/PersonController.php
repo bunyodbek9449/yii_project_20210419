@@ -2,6 +2,7 @@
 
 namespace frontend\controllers;
 
+use Yii;
 use yii\web\Controller;
 use frontend\models\Constants;
 use frontend\models\PersonForm;
@@ -11,12 +12,12 @@ class PersonController extends Controller
     public function actionIndex() 
     {
         $model = new PersonForm();
-        if($model->load(\Yii::$app->request->post()))
+
+        if($model->load(\Yii::$app->request->post()) && $model->validate())
         {
-            if($model->validate())
-            {
-                $model->save();
-            }
+            $model->save();
+            Yii::$app->session->setFlash('success', 'Muvaffaqqiyatli qo`shildi');
+            return $this->redirect('/person');
         }
         return $this->render('index', ['model'=>$model]);
     }

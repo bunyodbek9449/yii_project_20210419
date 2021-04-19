@@ -15,10 +15,10 @@ class PersonForm extends Model
     public function rules()
     {
         return[
-            [['first_name', 'last_name', 'email', 'gender'], 'required'],
+            [['first_name', 'last_name', 'email', 'gender'], 'required', 'message' => 'To`ldirishing kerak tonka'],
             [['first_name', 'last_name', 'email'], 'string', 'max'=>50],
             [['email'], 'email'],
-            ['gender', 'in', 'range'=>['erkak', 'ayol']]
+            ['gender', 'in', 'range'=>['erkak', 'ayol'], 'message' => 'erkak yoki ayol tentak.'],
         ];
     }
 

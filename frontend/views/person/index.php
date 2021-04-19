@@ -13,8 +13,4 @@ echo $form->field($model, 'email')->input('email');
 echo $form->field($model, 'gender');
 echo Html::submitButton('Yuborish', ['class'=>'btn btn-success']);
 
-
-
-
-
 ActiveForm::end(); ?>
