@@ -36,9 +36,10 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'About', 'url' => ['/site/about']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
+        ['label' => 'Anketa toldirish', 'url' => ['/person/index']],
+        ['label' => 'Bosh', 'url' => ['/site/index']],
+        ['label' => 'Biz haqimizda', 'url' => ['/site/about']],
+        ['label' => 'Aloqa', 'url' => ['/site/contact']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];

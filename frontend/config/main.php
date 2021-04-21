@@ -42,8 +42,14 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '' => 'site/index',
                 'about' => 'site/about',
                 'personview' => 'person/view',
+                'contact' => 'site/contact',
+                'signup' => 'site/signup',
+                'login' => 'site/login',
+                
+
             ],
         ],
         

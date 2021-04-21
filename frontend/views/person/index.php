@@ -2,15 +2,57 @@
 use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 
-$form = ActiveForm::begin([
-    'id' => 'person-form', 
-    'options' => ['class' => 'form-horizontal'],
-]);    
 
-echo $form->field($model, 'first_name');
-echo $form->field($model, 'last_name');
-echo $form->field($model, 'email')->input('email');
-echo $form->field($model, 'gender');
+$this->title = 'Anketa toldirish';
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anketa toldirish</title>
+</head>
+<body>
+    <h1 class="text-center">Malumotingizni kiriting</h1>
+    <div class="container">
+    <?php
+        $form = ActiveForm::begin([
+            'id' => 'person-form', 
+            'options' => ['class' => 'form-horizontal'],
+        ]);
+    ?>
+        <div class="row">
+            <div class="col-lg-5"><?php echo $form->field($model, 'first_name'); ?></div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-5"><?php echo $form->field($model, 'last_name'); ?></div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-5"><?php echo $form->field($model, 'email')->input('email'); ?></div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-5"><?php echo $form->field($model, 'gender'); ?></div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<?php
+// $form = ActiveForm::begin([
+//     'id' => 'person-form', 
+//     'options' => ['class' => 'form-horizontal'],
+// ]);    
+
+//echo $form->field($model, 'first_name');
+//echo $form->field($model, 'last_name');
+//echo $form->field($model, 'email')->input('email');
+//echo $form->field($model, 'gender');
 echo Html::submitButton('Yuborish', ['class'=>'btn btn-success']);
 
 ActiveForm::end(); ?>

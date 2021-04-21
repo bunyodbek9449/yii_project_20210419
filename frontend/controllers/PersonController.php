@@ -29,7 +29,5 @@ class PersonController extends Controller
 
         return $this->render('view', ["data" => $result]);
     }
-
-    
 }
 
