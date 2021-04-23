@@ -15,12 +15,11 @@ use yii\helpers\Html;
 </head>
 <body>
     <form method="post">
-        <a class="btn btn-success" href="add">ADD</a>
+        <a class="btn btn-primary" href="add">ADD</a>
     </form>
     <br>
     <table class="table table-striped">
         <tr>
-            <th scope="col">#</th>
             <th scope="col">id</th>
             <th scope="col">first_name</th>
             <th scope="col">last_name</th>
@@ -30,20 +29,31 @@ use yii\helpers\Html;
             <th scope="col">updated_at</th>
             <th scope="col">function</th>
         </tr>
-        <?php $a=0; foreach($data as $item){
+        <?php foreach($data as $item){
             echo "<tr>";
-            echo "<th>" . $a++. "</th>";
-            echo "<td>" . $item['id'] . "</td>";
+            echo "<th>" . $item['id'] . "</th>";
             echo "<td>" . $item['first_name'] . "</td>";
             echo "<td>" . $item['last_name'] . "</td>";
             echo "<td>" . $item['email'] . "</td>";
             echo "<td>" . $item['gender'] . "</td>";
             echo "<td>" . $item['created_at'] . "</td>";
             echo "<td>" . $item['updated_at'] . "</td>";
-            echo "<td>" . '<a href="#">'. edit ."</a>" . " / " . '<a href="#">'. delete ."</a>" . "</td>";
+            echo "<td>";
+            ?> 
+                <a class="btn btn-info" href="view?id=<?= $item['id']; ?>">View</a> 
+                <?php echo " / "; ?>
+                <a class="btn btn-success" href="edit?id=<?= $item['id']; ?>">edit</a>
+                <?php echo " / "; ?>
+                <a class="btn btn-warning" href="delete?id=<?= $item['id']; ?>">delete</a> 
+        <?php
+            echo "</td>";
             echo "</tr>";
         }?>
     </table>
+
+        <?php
+            echo count($data);
+        ?>
+
 </body>
 </html>
-<a href=""></a>

@@ -3,7 +3,7 @@ use yii\widgets\ActiveForm;
 use yii\helpers\Html;
 
 
-$this->title = 'Anketa toldirish';
+$this->title = 'Anketa yangilash';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <!DOCTYPE html>
@@ -12,10 +12,10 @@ $this->params['breadcrumbs'][] = $this->title;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anketa toldirish</title>
+    <title><?= $this->title; ?></title>
 </head>
 <body>
-    <h1 class="text-center">Malumotingizni kiriting</h1>
+    <h1 class="text-center"></h1>
     <div class="container">
     <?php
         $form = ActiveForm::begin([

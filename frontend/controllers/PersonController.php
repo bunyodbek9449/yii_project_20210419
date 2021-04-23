@@ -29,12 +29,22 @@ class PersonController extends Controller
         return $this->render('add', ['model'=>$model]);
     }
 
-    public function actionView() 
-    {
-        $newarray = new Constants();
-        $result = $newarray->Constantsarray();
+    public function actionView($id) 
+    {   
+        $sql = "select * from person where id = :param_1";
+        $command = Yii::$app->db->createCommand($sql);
+        $command->bindParam(':param_1', $id);
+        $data_1 = $command->queryAll();
+        return $this->render('view', ["data" => $data_1]);
+    }
 
-        return $this->render('view', ["data" => $result]);
+    public function actionEdit($id) 
+    {   
+        $sql = "select * from person where id = :param_1";
+        $command = Yii::$app->db->createCommand($sql);
+        $command->bindParam(':param_1', $id);
+        $data_1 = $command->queryAll();
+        return $this->render('edit', ["data" => $data_1]);
     }
 }
 

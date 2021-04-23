@@ -1,31 +1,48 @@
+<?php
+use yii\widgets\ActiveForm;
+use yii\helpers\Html;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Person/View</title>
 </head>
 <body>
-    <table class="table table-striped">
+<table class="table table-striped">
+        <?php foreach($data as $item): ?>
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">nomi</th>
-            <th scope="col">aholi_soni</th>
-            <th scope="col">maydoni</th>
-            <th scope="col">poytaxti</th>
-            <th scope="col">pul_birligi</th>
+            <th scope="col">id</th>
+            <td><?php echo $item['id']; ?></td>
         </tr>
-        <?php $a=0; foreach($data as $item){
-            echo "<tr>";
-            echo "<th>" . $a++. "</th>";
-            echo "<td>" . $item['nomi'] . "</td>";
-            echo "<td>" . $item['aholi_soni'] . "</td>";
-            echo "<td>" . $item['maydoni'] . "</td>";
-            echo "<td>" . $item['poytaxti'] . "</td>";
-            echo "<td>" . $item['pul_birligi'] . "</td>";
-            echo "</tr>";
-        }?>
+        <tr>
+            <th scope="col">first_name</th>
+            <td><?php echo $item['first_name']; ?></td>
+        </tr>
+        <tr>
+            <th scope="col">last_name</th>
+            <td><?php echo $item['last_name']; ?></td>
+        </tr>
+        <tr>
+            <th scope="col">email</th>
+            <td><?php echo $item['email']; ?></td>
+        </tr>
+        <tr>
+            <th scope="col">gender</th>
+            <td><?php echo $item['gender']; ?></td>
+        </tr>
+        <tr>
+            <th scope="col">created_at</th>
+            <td><?php echo $item['created_at']; ?></td>
+        </tr>
+        <tr>
+            <th scope="col">updated_at</th>
+            <td><?php echo $item['updated_at']; ?></td>
+        </tr>
+        <?php endforeach; ?>
     </table>
+    <a class="btn btn-default" href="index">Orqaga qaytish</a>
 </body>
 </html>
