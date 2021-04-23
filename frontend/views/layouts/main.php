@@ -36,7 +36,7 @@ AppAsset::register($this);
         ],
     ]);
     $menuItems = [
-        ['label' => 'Anketa toldirish', 'url' => ['/person/index']],
+        ['label' => 'INFO TABLES', 'url' => ['/person/index']],
         ['label' => 'Bosh', 'url' => ['/site/index']],
         ['label' => 'Biz haqimizda', 'url' => ['/site/about']],
         ['label' => 'Aloqa', 'url' => ['/site/contact']],

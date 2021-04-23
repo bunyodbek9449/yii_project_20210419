@@ -44,12 +44,9 @@ return [
             'rules' => [
                 '' => 'site/index',
                 'about' => 'site/about',
-                'personview' => 'person/view',
                 'contact' => 'site/contact',
                 'signup' => 'site/signup',
                 'login' => 'site/login',
-                
-
             ],
         ],
         

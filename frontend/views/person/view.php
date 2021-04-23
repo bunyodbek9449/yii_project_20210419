@@ -18,16 +18,14 @@
         </tr>
         <?php $a=0; foreach($data as $item){
             echo "<tr>";
-            echo "<th>" .$a++. "</th>";
-            echo "<td>" .$item['nomi']. "</td>";
-            echo "<td>" .$item['aholi_soni']. "</td>";
-            echo "<td>" .$item['maydoni']. "</td>";
-            echo "<td>" .$item['poytaxti']. "</td>";
-            echo "<td>" .$item['pul_birligi']. "</td>";
+            echo "<th>" . $a++. "</th>";
+            echo "<td>" . $item['nomi'] . "</td>";
+            echo "<td>" . $item['aholi_soni'] . "</td>";
+            echo "<td>" . $item['maydoni'] . "</td>";
+            echo "<td>" . $item['poytaxti'] . "</td>";
+            echo "<td>" . $item['pul_birligi'] . "</td>";
             echo "</tr>";
         }?>
     </table>
-    <?php //echo "<pre>"; print_r($data); ?>
-    <h1>Xolmurodga salom berdik</h1>
 </body>
 </html>
