@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Апр 19 2021 г., 15:46
--- Версия сервера: 10.3.13-MariaDB-log
--- Версия PHP: 7.1.32
+-- Время создания: Апр 25 2021 г., 08:06
+-- Версия сервера: 5.7.29
+-- Версия PHP: 7.1.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -54,8 +53,8 @@ CREATE TABLE `person` (
   `last_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `gender` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp(),
-  `updated_at` datetime NOT NULL DEFAULT current_timestamp()
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -63,17 +62,17 @@ CREATE TABLE `person` (
 --
 
 INSERT INTO `person` (`id`, `first_name`, `last_name`, `email`, `gender`, `created_at`, `updated_at`) VALUES
-(1, 'bunyod', 'Iskandarov', 'bunyod@bunyod.uz', 'ayol', '2021-04-19 17:41:52', '2021-04-19 17:42:46'),
-(2, 'Xolmurod', 'Isroilov', 'x.isroilov@piima.uz', 'erkak', '2021-04-19 17:41:52', '2021-04-19 17:42:30'),
-(3, 'sdada', 'dsadsadsa', 'dsadas@sda.sd', 'erkak', '2021-04-19 17:41:52', '2021-04-19 17:42:30'),
-(4, 'Xolmurod', 'Isroilov', 'x.isroilov@piima.uz', 'erkak', '2021-04-19 17:41:52', '2021-04-19 17:42:30'),
-(5, 'Xolmurod', 'Isroilov', 'x.isroilov@piima.uz', 'erkak', '2021-04-19 17:41:52', '2021-04-19 17:42:30'),
 (6, 'saf', 'asfasfa', 'sfasf@asf.afsafas', 'erkak', '2021-04-19 17:41:52', '2021-04-19 17:42:30'),
 (7, 'asgsag', 'asgsag', 'dsadas@sda.sd', 'erkak', '2021-04-19 17:41:52', '2021-04-19 17:42:30'),
 (8, 'asfsafsaf', 'afasfa', 'sfasf@asf.afsafas', 'ayol', '2021-04-19 17:41:52', '2021-04-19 17:42:30'),
 (9, 'safsaf', 'afasf', 'sfasf@asf.afsafas', 'ayol', '2021-04-19 17:41:52', '2021-04-19 17:42:30'),
 (10, 'asfdas', 'fsafsaf', 'sfasf@asf.afsafas', 'ayol', '2021-04-19 17:41:52', '2021-04-19 00:00:00'),
-(11, 'TEST', 'TEST', 'TEST@TEST.TEST', 'erkak', '2021-04-19 17:45:55', '2021-04-19 17:45:55');
+(11, 'TEST', 'TEST', 'TEST@TEST.TEST', 'erkak', '2021-04-19 17:45:55', '2021-04-19 17:45:55'),
+(12, 'sdadsad', 'dsadsadsa', 'dsadsa@dsadsa.dsa', 'erkak', '2021-04-24 13:25:53', '2021-04-24 13:25:53'),
+(13, 'bunyod', 'Iskandarov', 'bunyod@bunyod.uz', 'erkak', '2021-04-24 16:27:49', '2021-04-24 16:27:49'),
+(14, 'Akbar', 'Saidov', 'a.saidov@gmail.com', 'erkak', '2021-04-24 17:43:50', '2021-04-24 17:43:50'),
+(15, 'salom123', 'salom', 'salom@salom.uz', 'erkak', '2021-04-24 17:50:27', '2021-04-24 17:50:39'),
+(17, '123dsadasdsadasdsad', 'dsadsadasd', 'dsadasd@dsadsa.uz', 'erkak', '2021-04-24 18:36:37', '2021-04-24 18:38:45');
 
 -- --------------------------------------------------------
 
@@ -88,7 +87,7 @@ CREATE TABLE `user` (
   `password_hash` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password_reset_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `status` smallint(6) NOT NULL DEFAULT 10,
+  `status` smallint(6) NOT NULL DEFAULT '10',
   `created_at` int(11) NOT NULL,
   `updated_at` int(11) NOT NULL,
   `verification_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
@@ -134,7 +133,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT для таблицы `person`
 --
 ALTER TABLE `person`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT для таблицы `user`

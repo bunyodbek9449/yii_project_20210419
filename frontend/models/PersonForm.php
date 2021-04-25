@@ -42,6 +42,34 @@ class PersonForm extends Model
         $command = \Yii::$app->db->createCommand($sql)->bindValues($values);
         return $command->execute();
     }
+
+    public function update()
+    {
+        $sql = "UPDATE person SET first_name = :first_name, last_name = :last_name, email = :email, gender = :gender
+        WHERE id = :id";
+        //print_r($this->attributes);die();
+        $values = [
+            ':id'=>$this->id,
+            ':first_name'=>$this->first_name,
+            ':last_name'=>$this->last_name,
+            ':email'=>$this->email,
+            ':gender'=>$this->gender,
+        ];
+        $command = \Yii::$app->db->createCommand($sql)->bindValues($values);
+        return $command->execute();
+
+
+    }
+
+    public function delete()
+    {
+        $sql = "DELETE FROM person WHERE id = :id";
+        $values = [
+            ':id'=>$this->id,
+        ];
+        $command = \Yii::$app->db->createCommand($sql)->bindValues($values);
+        return $command->execute();
+    }
 }
 
 ?>

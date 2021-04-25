@@ -44,7 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 <?php
-echo Html::submitButton('Yuborish', ['class'=>'btn btn-success']);
+echo Html::submitButton('Saqlash', ['class'=>'btn btn-success']);
 ?>
 &nbsp;&nbsp;
 <a class="btn btn-default" href="index">Orqaga qaytish</a>

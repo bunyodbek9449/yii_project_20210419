@@ -15,7 +15,7 @@ use yii\helpers\Html;
 </head>
 <body>
     <form method="post">
-        <a class="btn btn-primary" href="add">ADD</a>
+        <a class="btn btn-primary" href="/person/add">ADD</a>
     </form>
     <br>
     <table class="table table-striped">
@@ -40,11 +40,9 @@ use yii\helpers\Html;
             echo "<td>" . $item['updated_at'] . "</td>";
             echo "<td>";
             ?> 
-                <a class="btn btn-info" href="view?id=<?= $item['id']; ?>">View</a> 
-                <?php echo " / "; ?>
-                <a class="btn btn-success" href="edit?id=<?= $item['id']; ?>">edit</a>
-                <?php echo " / "; ?>
-                <a class="btn btn-warning" href="delete?id=<?= $item['id']; ?>">delete</a> 
+                <a class="btn btn-info" href="/person/view?id=<?= $item['id']; ?>">View</a>
+                <a class="btn btn-success" href="/person/edit?id=<?= $item['id']; ?>">edit</a>
+                <a class="btn btn-warning" href="/person/delete?id=<?= $item['id']; ?>">delete</a> 
         <?php
             echo "</td>";
             echo "</tr>";
