@@ -34,7 +34,7 @@ class PersonController extends Controller
         {
             $model->save();
             Yii::$app->session->setFlash('success', 'Успешно добавленно');
-            return $this->redirect('/person');
+            return $this->redirect('/person/index');
         }
         return $this->render('add', ['model'=>$model]);
     }
