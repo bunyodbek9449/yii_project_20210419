@@ -10,11 +10,21 @@ use yii\data\Pagination;
 
 class PersonController extends Controller 
 {
-    public function actionIndex()
+    public function actionIndex($page = null)
     {
-        $command = Yii::$app->db->createCommand("select * from person");
+        $limit = 5; //bu pagination korinadigan malumotlar soni
+        $offset = !empty($page) ? ( ($page - 1) * $limit ) : 0; // 
+        $person = Yii::$app->db->createCommand("select * from person"); // bazaga malumotlar $personga
+        $data = $person->queryAll();
+        $personCount = count($data);
+        $paginationPages = ceil($personCount / $limit);
+
+        $command = Yii::$app->db->createCommand("select * from person limit {$offset}, {$limit}");
         $natija = $command->queryAll();
-        return $this->render('index', ['data'=>$natija]);
+        return $this->render('index', [
+            'data' => $natija, 
+            'pagination' => $paginationPages
+        ]);
     }
 
     public function actionAdd() 
