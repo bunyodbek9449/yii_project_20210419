@@ -12,36 +12,36 @@ use yii\helpers\Html;
 </head>
 <body>
 <table class="table table-striped">
-        <?php foreach($data as $item): ?>
+        <?php //foreach($data as $item): ?>
         <tr>
             <th scope="col">id</th>
-            <td><?php echo $item['id']; ?></td>
+            <td><?php echo $data['id']; ?></td>
         </tr>
         <tr>
             <th scope="col">first_name</th>
-            <td><?php echo $item['first_name']; ?></td>
+            <td><?php echo $data['first_name']; ?></td>
         </tr>
         <tr>
             <th scope="col">last_name</th>
-            <td><?php echo $item['last_name']; ?></td>
+            <td><?php echo $data['last_name']; ?></td>
         </tr>
         <tr>
             <th scope="col">email</th>
-            <td><?php echo $item['email']; ?></td>
+            <td><?php echo $data['email']; ?></td>
         </tr>
         <tr>
             <th scope="col">gender</th>
-            <td><?php echo $item['gender']; ?></td>
+            <td><?php echo $data['gender']; ?></td>
         </tr>
         <tr>
             <th scope="col">created_at</th>
-            <td><?php echo $item['created_at']; ?></td>
+            <td><?php echo $data['created_at']; ?></td>
         </tr>
         <tr>
             <th scope="col">updated_at</th>
-            <td><?php echo $item['updated_at']; ?></td>
+            <td><?php echo $data['updated_at']; ?></td>
         </tr>
-        <?php endforeach; ?>
+        <?php //endforeach; ?>
     </table>
     <a class="btn btn-default" href="index">Orqaga qaytish</a>
 </body>

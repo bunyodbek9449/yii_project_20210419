@@ -49,7 +49,7 @@ use yii\helpers\Html;
         }?>
     </table>
         <?php for($i=1; $i<=$pagination; $i++):?>
-            <a class="btn btn-primary" href="index?page=<?= $i; ?>"><?= $i; ?> </a>
+            <a class="btn btn-primary" href="/person/index?page=<?= $i; ?>"><?= $i; ?> </a>
         <?php endfor; ?>
 </body>
 </html>
